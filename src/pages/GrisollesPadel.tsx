@@ -24,6 +24,7 @@ const grisollesImages = [
 const GrisollesPadel = () => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Section en-tête */}
       <div className="bg-brand-blue text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-center">
@@ -37,13 +38,23 @@ const GrisollesPadel = () => {
         </div>
       </div>
 
+      {/* Contenu principal */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Section "Court Info" */}
           <CourtInfo />
+
+          {/* Section "Weather Widget" */}
           <WeatherWidget />
         </div>
-        <Features />
+
+        {/* Localisation en dessous de "Court Info" */}
         <LocationMap />
+
+        {/* Section "Features" */}
+        <Features />
+
+        {/* Section "Call To Action" */}
         <BookingCTA />
       </div>
     </div>
