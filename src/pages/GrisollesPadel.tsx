@@ -7,15 +7,15 @@ import ImageCarousel from '../components/ImageCarousel';
 
 const grisollesImages = [
   {
-    url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/34fdcfcf245808e7550b09e48b6f01a664afee9e/IMG_2452.HEIC",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002528/cjeyubfsyydtcdwkkxaw.jpg",
     alt: "Terrain de padel Grisolles"
   },
   {
-    url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/34fdcfcf245808e7550b09e48b6f01a664afee9e/IMG_2477.HEIC",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002527/bfe9pvh5ap35lhufzqmk.heic",
     alt: "Installation padel"
   },
   {
-    url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/34fdcfcf245808e7550b09e48b6f01a664afee9e/IMG_E2457.HEIC",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002527/usvcy4cprsfz7wldyu4l.heic",
     alt: "Vue du terrain"
   }
 ];
