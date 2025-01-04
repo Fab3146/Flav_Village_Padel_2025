@@ -52,16 +52,15 @@ export const faqData = [
     {
     emoji: "📍 ",
     question: "Où se situe le terrain de Village Padel ?",
-    answer: "Notre terrain est idéalement situé à Grisolles, sur le chemin de la Belle Gabrille 82170. Vous le trouverez facilement à côté des terrains de tennis de Grisolles."
-      "Facile d'accès pour les habitants de : Fronton, castelnau d estretefonds, Grenade, Pompignan, Villemur, Saint-jory, Toulouse, Montauban... "
+    answer: "Notre terrain est idéalement situé à Grisolles, sur le chemin de la Belle Gabrille 82170. Vous le trouverez facilement à côté des terrains de tennis de Grisolles. Facile d'accès pour les habitants de : Fronton, castelnau d estretefonds, Grenade, Pompignan, Villemur, Saint-jory, Toulouse, Montauban... "
   },
   {
     emoji: "🔒",
     question: "Que comprend le système automatisé de Village Padel ?",
-    answer: "Avec notre application, vous bénéficiez d’un système entièrement automatisé :"
-        "Accès au terrain via un code de déverrouillage."
-        "Éclairage automatique pour les créneaux du soir.
-        "Accès au matériel (raquettes et balles) directement sur place."
+    answer: `Avec notre application, vous bénéficiez d’un système entièrement automatisé :
+    - Accès au terrain via un code de déverrouillage.
+    - Éclairage automatique pour les créneaux du soir.
+    - Accès au matériel (raquettes et balles) directement sur place.`
   },
   {
     emoji: "👥",
