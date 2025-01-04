@@ -11,11 +11,11 @@ const grisollesImages = [
     alt: "Terrain de padel Grisolles"
   },
   {
-    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002527/bfe9pvh5ap35lhufzqmk.heic",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008882/IMG_2477_lmkxty.jpg",
     alt: "Installation padel"
   },
   {
-    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002527/usvcy4cprsfz7wldyu4l.heic",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008880/IMG_2452_s9pdqn.jpg",
     alt: "Vue du terrain"
   }
 ];
