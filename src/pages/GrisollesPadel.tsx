@@ -4,6 +4,7 @@ import CourtInfo from '../components/GrisollesPadel/CourtInfo';
 import Features from '../components/GrisollesPadel/Features';
 import BookingCTA from '../components/GrisollesPadel/BookingCTA';
 import ImageCarousel from '../components/ImageCarousel';
+import LocationMap from '../components/GrisollesPadel/LocationMap';
 
 const grisollesImages = [
   {
@@ -42,6 +43,7 @@ const GrisollesPadel = () => {
           <WeatherWidget />
         </div>
         <Features />
+        <LocationMap />
         <BookingCTA />
       </div>
     </div>
