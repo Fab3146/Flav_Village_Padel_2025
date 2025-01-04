@@ -5,24 +5,40 @@ import AppScreenshotCarousel from '../../components/AppScreenshotCarousel';
 const AppFeatures = () => {
   const appScreenshots = [
     {
-      url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/main/screenshots/welcome.png",
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/1.png",
+      alt: "Bienvenue sur Village Padel"
+    },
+    {
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/2.png",
+      alt: "avantages VP"
+    },
+    {
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/3.png",
       alt: "Écran d'accueil Village Padel"
     },
     {
-      url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/main/screenshots/features.png",
-      alt: "Fonctionnalités Village Padel"
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/4.png",
+      alt: "Profil"
     },
     {
-      url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/main/screenshots/home.png",
-      alt: "Page d'accueil Village Padel"
+      url: "hhttps://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/5.png",
+      alt: "Constitue une équipe"
     },
     {
-      url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/main/screenshots/profile.png",
-      alt: "Profil Village Padel"
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/6.png",
+      alt: "Réserve Facilement "
     },
     {
-      url: "https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/main/screenshots/team.png",
-      alt: "Équipe Village Padel"
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/7.png",
+      alt: "Paiement sécurisé"
+    },
+    {
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/8.png",
+      alt: "Accès au court et au matériles"
+    },
+        {
+      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/9.png",
+      alt: "Annulation"
     }
   ];
 
