@@ -16,7 +16,7 @@ const automatisationImages = [
     alt: "Installation de terrain"
   }
 ];
-const constructioImages = [
+const constructionImages = [
   {
     url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736010933/IMG_E2454_o1hvo7.jpg",
     alt: "Terrain de padel automatisé"
@@ -71,13 +71,13 @@ const Solutions = () => {
           {/* Solution 2 */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Construction gratuite de pistes de padel dans votre complexe sportif 
+              Construction et exploitation de pistes de padel  
             </h3>
             <div className="mb-6">
-              <ImageCarousel images={constructioImages} />
+              <ImageCarousel images={constructionImages} />
             </div>
             <p className="text-gray-600 mb-6">
-              Village Padel installe gratuitement un terrain de padel outdoor dans votre complexe sportif :
+              Village Padel installe et exploite gratuitement un terrain de padel outdoor dans votre complexe sportif :
             </p>
             <ul className="space-y-4">
               <li className="flex items-center">
