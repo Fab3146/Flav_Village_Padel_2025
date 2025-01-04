@@ -5,39 +5,39 @@ import AppScreenshotCarousel from '../../components/AppScreenshotCarousel';
 const AppFeatures = () => {
   const appScreenshots = [
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/1.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/fjwgpzkvyhltchat6hny.png",
       alt: "Bienvenue sur Village Padel"
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/2.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002561/mqycn4rm5vt7flwhzuaj.png",
       alt: "avantages VP"
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/3.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/s1sdfp5chejvpvidl2xx.png",
       alt: "Écran d'accueil Village Padel"
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/4.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/x7x34cnv2nsgzj00xeqz.png",
       alt: "Profil"
     },
     {
-      url: "hhttps://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/5.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/lvh7nz6qewcmezmcbujo.png",
       alt: "Constitue une équipe"
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/6.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/rrvjxtchvzajuesimbbp.png",
       alt: "Réserve Facilement "
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/7.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/xglmayx1kkhszwjvdeyy.png",
       alt: "Paiement sécurisé"
     },
     {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/8.png",
-      alt: "Accès au court et au matériles"
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002563/y5hsys1eg9eae1smgron.png",
+      alt: "Accès au court et au matérieles"
     },
         {
-      url: "https://github.com/Fab3146/Flav_Village_Padel_2025/blob/40292ce822bfdd64d08b49e88035696c10d98ce2/Photo/pr%C3%A9sentation%20appstore%202024/9.png",
+      url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002562/swk8e2ae6h7itlnj0pux.png",
       alt: "Annulation"
     }
   ];
