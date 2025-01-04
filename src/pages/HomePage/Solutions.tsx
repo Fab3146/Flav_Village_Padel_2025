@@ -4,15 +4,15 @@ import ImageCarousel from '../../components/ImageCarousel';
 
 const solutionImages = [
   {
-    url: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008896/IMG_2482_jajepj.jpg",
     alt: "Terrain de padel automatisé"
   },
   {
-    url: "https://images.unsplash.com/photo-1627627256672-027a4613d028?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    alt: "Système de réservation"
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008883/IMG_2457_nrymsw.jpg",
+    alt: "matériels disponible"
   },
   {
-    url: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008882/IMG_2477_lmkxty.jpg",
     alt: "Installation de terrain"
   }
 ];
@@ -27,7 +27,7 @@ const Solutions = () => {
           {/* Solution 1 */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Modernisez vos terrains avec notre solution d'automatisation complète
+              Automatisation complète de terrains 
             </h3>
             <div className="mb-6">
               <ImageCarousel images={solutionImages} />
@@ -58,7 +58,7 @@ const Solutions = () => {
           {/* Solution 2 */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Ajoutez un terrain de padel à votre club sans investissement initial
+              Construction gratuite de pistes de padel dans votre complexe sportif 
             </h3>
             <div className="mb-6">
               <ImageCarousel images={solutionImages} />
