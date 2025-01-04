@@ -1,76 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import { Cloud, Sun, Wind, Droplets } from 'lucide-react';
-import { getWeather } from '../../services/weather';
-import type { WeatherData } from '../../types/weather';
 
 const WeatherWidget = () => {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const apiKey = 'YOUR_API_KEY'; // Remplacez par votre clé API OpenWeatherMap
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const data = await getWeather();
-        setWeather(data);
-      } catch (error) {
-        console.error('Error:', error);
-      } finally {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=Grisolles,France&appid=${apiKey}&units=metric`
+        );
+        const data = await response.json();
+        setWeatherData(data.list);
         setLoading(false);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
       }
     };
 
     fetchWeather();
-  }, []);
+  }, [apiKey]);
 
   if (loading) {
-    return (
-      <div className="bg-white rounded-lg shadow-lg p-6 animate-pulse">
-        <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
-        <div className="space-y-3">
-          <div className="h-6 bg-gray-200 rounded"></div>
-          <div className="h-6 bg-gray-200 rounded"></div>
-          <div className="h-6 bg-gray-200 rounded"></div>
-        </div>
-      </div>
-    );
+    // ... votre composant de chargement (similaire à votre code actuel)
   }
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
         <Sun className="text-brand-orange" />
-        Météo à Grisolles
+        Météo à Grisolles (7 prochains jours)
       </h2>
 
-      {weather && (
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <Cloud className="text-gray-600" />
-            <span className="text-lg">
-              {weather.current.weather_descriptions[0]}
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <Sun className="text-gray-600" />
-            <span className="text-lg">
-              {weather.current.temperature}°C
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Wind className="text-gray-600" />
-            <span className="text-lg">
-              Vent: {weather.current.wind_speed} km/h
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Droplets className="text-gray-600" />
-            <span className="text-lg">
-              Précipitations: {weather.current.precip}%
-            </span>
-          </div>
+      {weatherData && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {weatherData.map((day, index) => (
+            <div key={index} className="bg-gray-100 rounded-lg p-4">
+              <p><strong>{new Date(day.dt * 1000).toLocaleDateString()}</strong></p>
+              <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
+              <p>Température : {day.main.temp}°C</p>
+              <p>Vent : {day.wind.speed} m/s</p>
+            </div>
+          ))}
         </div>
       )}
     </div>
