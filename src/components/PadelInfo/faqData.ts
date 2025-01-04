@@ -66,6 +66,7 @@ export const faqData = [
     emoji: "👥",
     question: "Comment faire si nous ne sommes pas 4 pour jouer ?",
     answer: "Nous avons un groupe WhatsApp actif avec les membres de notre communauté qui permet de trouver des partenaires ou compléter des équipes facilement. Scannez le QR code ci-dessous pour nous rejoindre !",
+    hasQRCode: true,
     qrCode: "https://res.cloudinary.com/damfvriyn/image/upload/v1736004008/QR_code_mnwacu.png",
     qrCodeLabel: "QR code pour rejoindre le groupe WhatsApp"
   },
