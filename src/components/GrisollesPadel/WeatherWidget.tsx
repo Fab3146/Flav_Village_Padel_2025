@@ -4,7 +4,7 @@ import { Cloud, Sun, Wind, Droplets } from 'lucide-react';
 const WeatherWidget = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const apiKey = 'YOUR_API_KEY'; // Remplacez par votre clé API OpenWeatherMap
+  const apiKey = 'f439e60cb76ed983634ad07546c45238'; // Remplacez par votre clé API OpenWeatherMap
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -31,7 +31,7 @@ const WeatherWidget = () => {
     <div className="bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
         <Sun className="text-brand-orange" />
-        Météo à Grisolles (7 prochains jours)
+        Météo à Grisolles
       </h2>
 
       {weatherData && (
