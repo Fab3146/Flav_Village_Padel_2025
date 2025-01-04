@@ -7,15 +7,15 @@ import ImageCarousel from '../components/ImageCarousel';
 
 const grisollesImages = [
   {
-    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736002528/cjeyubfsyydtcdwkkxaw.jpg",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736010730/IMG_2452_s9pdqn_2e82be.jpg",
     alt: "Terrain de padel Grisolles"
   },
   {
-    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008882/IMG_2477_lmkxty.jpg",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736010636/IMG_2477_lmkxty_4eb23e.jpg",
     alt: "Installation padel"
   },
   {
-    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008880/IMG_2452_s9pdqn.jpg",
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736011104/cjeyubfsyydtcdwkkxaw_c04b07.jpg",
     alt: "Vue du terrain"
   }
 ];
