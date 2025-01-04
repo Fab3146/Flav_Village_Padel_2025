@@ -2,7 +2,7 @@ import React from 'react';
 import { Key, Sun, Wrench, HandshakeIcon } from 'lucide-react';
 import ImageCarousel from '../../components/ImageCarousel';
 
-const solutionImages = [
+const automatisationImages = [
   {
     url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736008896/IMG_2482_jajepj.jpg",
     alt: "Terrain de padel automatisé"
@@ -16,7 +16,20 @@ const solutionImages = [
     alt: "Installation de terrain"
   }
 ];
-
+const constructioImages = [
+  {
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736010933/IMG_E2454_o1hvo7.jpg",
+    alt: "Terrain de padel automatisé"
+  },
+  {
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736011951/DJI_0182_e2bkfb.jpg",
+    alt: "travaux"
+  },
+  {
+    url: "https://res.cloudinary.com/damfvriyn/image/upload/v1736011951/DJI_0192_vhukji.jpg",
+    alt: "Installation de terrain dans le complexe sportif"
+  }
+];
 const Solutions = () => {
   return (
     <section id="solutions" className="py-20 bg-gray-50">
@@ -30,7 +43,7 @@ const Solutions = () => {
               Automatisation complète de terrains 
             </h3>
             <div className="mb-6">
-              <ImageCarousel images={solutionImages} />
+              <ImageCarousel images={automatisationImages} />
             </div>
             <p className="text-gray-600 mb-6">
               Notre technologie rend vos terrains 100% autonomes. Grâce à l'application Village Padel, 
@@ -61,7 +74,7 @@ const Solutions = () => {
               Construction gratuite de pistes de padel dans votre complexe sportif 
             </h3>
             <div className="mb-6">
-              <ImageCarousel images={solutionImages} />
+              <ImageCarousel images={constructioImages} />
             </div>
             <p className="text-gray-600 mb-6">
               Village Padel installe gratuitement un terrain de padel outdoor dans votre complexe sportif :
