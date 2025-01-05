@@ -38,19 +38,6 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-12 bg-gray-50 p-8 rounded-lg shadow-lg">
-            <div className="flex flex-col items-center">
-              <MapPin className="w-8 h-8 text-brand-orange mb-4" />
-              <h3 className="text-xl font-bold mb-2">Adresse</h3>
-              <p className="text-gray-600">
-                Complexe sportif de Grisolles<br />
-                82170 Grisolles
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
