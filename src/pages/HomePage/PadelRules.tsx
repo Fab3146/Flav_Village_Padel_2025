@@ -21,11 +21,6 @@ const PadelRules = () => {
               allowFullScreen
             ></iframe>
           </div>
-
-          <button className="bg-brand-orange text-white px-8 py-4 rounded-lg hover:bg-brand-orange-dark transition flex items-center justify-center mx-auto">
-            <Play className="mr-2" />
-            Réserver un terrain et essayer maintenant
-          </button>
         </div>
       </div>
     </section>
