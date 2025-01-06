@@ -5,13 +5,13 @@ const testimonials = [
   {
     name: "Clement P.",
     role: "Présidente de club de Grisolles ",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://res.cloudinary.com/damfvriyn/image/upload/v1736192485/pexels-newman-photographs-234743505-30071289_qbxjui.jpg",
     text: "Une solution clé en main qui nous a permis de développer le padel sans investissement initial."
   },
   {
     name: "Stephane T.",
     role: "Bureau du Tennis club de Grisolles",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    image: "https://res.cloudinary.com/damfvriyn/image/upload/v1736192486/pexels-luiz-milczwski-1663966103-27868437_mpgawe.jpg",
     text: "L'automatisation a révolutionné notre gestion des terrains. Nos membres adorent la simplicité d'utilisation !"
   },
   {
