@@ -13,7 +13,7 @@ const WhatsAppCommunity = () => {
       </h2>
 
       <p className="mb-4">
-        Recherchez des partenaires pour jouer au padel de Grisolles en rejoignant notre groupe WhatsApp dédié.
+        Rejoignez notre groupe WhatsApp pour trouver des partenaires de jeu et rester informé des actualités du Padel de Grisolles !
       </p>
 
       <div className="flex flex-col items-center">
