@@ -5,10 +5,10 @@ const WhatsAppSection = () => {
     <section id="whatsapp" className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-center mb-6">
-          Rejoignez notre groupe WhatsApp !
+          Rejoignez notre communauté WhatsApp !
         </h2>
         <p className="text-center text-gray-600 mb-8">
-          Trouvez des partenaires de jeu et restez informé des actualités du Padel de Grisolles !
+          Trouvez des partenaires de jeu et restez informé des actualités du Padel de Grisolles 
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -27,7 +27,7 @@ const WhatsAppSection = () => {
           {/* Join Button Section */}
           <div className="flex flex-col items-center">
             <p className="text-sm text-gray-500 text-center mb-4">
-              Ou rejoignez depuis votre ordinateur :
+              Ou rejoignez depuis ici :
             </p>
             <a
               href="https://chat.whatsapp.com/H69NBqjULMy9MrHJ6MDyTZ"
