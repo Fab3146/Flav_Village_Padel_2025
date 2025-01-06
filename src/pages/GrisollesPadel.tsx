@@ -5,6 +5,7 @@ import Features from '../components/GrisollesPadel/Features';
 import BookingCTA from '../components/GrisollesPadel/BookingCTA';
 import ImageCarousel from '../components/ImageCarousel';
 import LocationMap from '../components/GrisollesPadel/LocationMap';
+import WhatsAppCommunity from '../components/GrisollesPadel/WhatsAppCommunity';
 
 const grisollesImages = [
   {
@@ -24,7 +25,7 @@ const grisollesImages = [
 const GrisollesPadel = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Section en-tête */}
+      {/* Section d'entête */}
       <div className="bg-brand-blue text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-center">
@@ -40,21 +41,20 @@ const GrisollesPadel = () => {
 
       {/* Contenu principal */}
       <div className="container mx-auto px-4 py-12">
+        {/* Informations et météo */}
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Section "Court Info" */}
           <CourtInfo />
-
-          {/* Section "Weather Widget" */}
           <WeatherWidget />
         </div>
 
-        {/* Localisation en dessous de "Court Info" */}
-        <LocationMap />
+        {/* Localisation et communauté WhatsApp */}
+        <div className="grid md:grid-cols-2 gap-12 mt-12">
+          <LocationMap />
+          <WhatsAppCommunity />
+        </div>
 
-        {/* Section "Features" */}
+        {/* Autres sections */}
         <Features />
-
-        {/* Section "Call To Action" */}
         <BookingCTA />
       </div>
     </div>
@@ -62,3 +62,4 @@ const GrisollesPadel = () => {
 };
 
 export default GrisollesPadel;
+
