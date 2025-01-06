@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -38,7 +38,14 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </section>
+  );
+};
+
+export default ContactSection;
+
   );
 };
 
