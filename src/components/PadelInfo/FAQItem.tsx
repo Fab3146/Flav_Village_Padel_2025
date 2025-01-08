@@ -8,6 +8,10 @@ interface FAQItemProps {
   images?: string[];
   qrCode?: string;
   qrCodeLabel?: string;
+  button?: {
+    text: string;
+    link: string;
+  };
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ 
@@ -16,7 +20,8 @@ const FAQItem: React.FC<FAQItemProps> = ({
   answer, 
   images, 
   qrCode,
-  qrCodeLabel 
+  qrCodeLabel,
+  button
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -61,6 +66,19 @@ const FAQItem: React.FC<FAQItemProps> = ({
                 className="w-32 h-32 mx-auto"
               />
               <p className="text-sm text-gray-500 mt-2">{qrCodeLabel}</p>
+            </div>
+          )}
+          
+          {button && (
+            <div className="text-center">
+              <a
+                href={button.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-md"
+              >
+                {button.text}
+              </a>
             </div>
           )}
         </div>
