@@ -68,7 +68,7 @@ const Solutions = () => {
               className="mt-8 inline-block bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition"
             >
               En savoir plus sur l'automatisation
-            </Link>>
+            </Link>
           </div>
 
           {/* Solution 2 */}
