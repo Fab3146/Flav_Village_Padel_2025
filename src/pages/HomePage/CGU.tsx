@@ -78,5 +78,3 @@ const CGU = () => {
 
 export default CGU;
 };
-
-export default CGU;
