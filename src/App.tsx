@@ -6,6 +6,8 @@ import PadelInfo from './pages/PadelInfo';
 import GrisollesPadel from './pages/GrisollesPadel';
 import Footer from './components/Footer';
 import PromoBar from './components/PromoBar';
+import CGU from './pages/HomePage/CGU';
+import CGV from './pages/HomePage/CGV';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +29,8 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/padel-info" element={<PadelInfo />} />
             <Route path="/grisolles" element={<GrisollesPadel />} />
+            <Route path="/cgu" element={<CGU />} />
+            <Route path="/cgv" element={<CGV />} />
           </Routes>
         </main>
 
