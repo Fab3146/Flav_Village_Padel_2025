@@ -63,9 +63,12 @@ const Solutions = () => {
                 <span>Accès aux raquettes et balles via une boîte sécurisée</span>
               </li>
             </ul>
-            <button className="mt-8 bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition">
+            <Link 
+              to="/#contact"
+              className="mt-8 inline-block bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition"
+            >
               En savoir plus sur l'automatisation
-            </button>
+            </Link>>
           </div>
 
           {/* Solution 2 */}
@@ -93,9 +96,12 @@ const Solutions = () => {
                 <span>Maintenance et exploitation gérées par nos soins</span>
               </li>
             </ul>
-            <button className="mt-8 bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition">
+            <Link 
+              to="/grisolles"
+              className="mt-8 inline-block bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition"
+            >
               Voir un exemple de terrain installé
-            </button>
+            </Link>
           </div>
         </div>
       </div>
