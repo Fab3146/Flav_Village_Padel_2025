@@ -14,14 +14,14 @@ interface FAQItemProps {
   };
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ 
-  emoji, 
-  question, 
-  answer, 
-  images, 
+const FAQItem: React.FC<FAQItemProps> = ({
+  emoji,
+  question,
+  answer,
+  images = [],
   qrCode,
-  qrCodeLabel,
-  button
+  qrCodeLabel = "QR Code",
+  button,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,8 +44,9 @@ const FAQItem: React.FC<FAQItemProps> = ({
       {isOpen && (
         <div className="pb-6 pl-16 pr-4">
           <p className="text-gray-600 mb-4">{answer}</p>
-          
-          {images && images.length > 0 && (
+
+          {/* Images Section */}
+          {images.length > 0 && (
             <div className="grid grid-cols-2 gap-4 mb-6">
               {images.map((image, index) => (
                 <img
@@ -57,27 +58,29 @@ const FAQItem: React.FC<FAQItemProps> = ({
               ))}
             </div>
           )}
-          
+
+          {/* QR Code Section */}
           {qrCode && (
             <div className="text-center">
               <img
                 src={qrCode}
-                alt={qrCodeLabel || "QR Code"}
+                alt={qrCodeLabel}
                 className="w-32 h-32 mx-auto"
               />
               <p className="text-sm text-gray-500 mt-2">{qrCodeLabel}</p>
             </div>
           )}
-          
+
+          {/* Button Section */}
           {button && (
             <div className="text-center">
               <a
-                href={button.link}
+                href={button.link || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-md"
               >
-                {button.text}
+                {button.text || "En savoir plus"}
               </a>
             </div>
           )}
