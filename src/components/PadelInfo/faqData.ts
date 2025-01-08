@@ -45,12 +45,12 @@ export const faqData = [
     answer: "Rien de plus simple ! Téléchargez notre application Village Padel, choisissez votre créneau de 1h30, et réservez directement en ligne. Vous recevrez un code pour accéder au terrain."
   },
   {
-    emoji: "⏳ ",
+    emoji: "⏳",
     question: "Comment réserver un terrain avec Village Padel ?",
     answer: "Chez Village Padel, tous les créneaux de jeu durent 1h30, ce qui vous laisse suffisamment de temps pour profiter."
   },
     {
-    emoji: "📍 ",
+    emoji: "📍",
     question: "Où se situe le terrain de Village Padel ?",
     answer: "Notre terrain est idéalement situé à Grisolles, sur le chemin de la Belle Gabrille 82170. Vous le trouverez facilement à côté des terrains de tennis de Grisolles. Facile d'accès pour les habitants de : Fronton, Castelnau d'Estretefonds, Grenade, Pompignan, Villemur, Saint-jory, Toulouse, Montauban... "
   },
