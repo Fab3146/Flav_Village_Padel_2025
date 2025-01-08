@@ -69,7 +69,7 @@ export const faqData = [
     button: {
       text: "Rejoindre le groupe WhatsApp",
       link: "https://chat.whatsapp.com/H69NBqjULMy9MrHJ6MDyTZ"
-    }
+    },
   },
   {
     emoji: "🌦️",
