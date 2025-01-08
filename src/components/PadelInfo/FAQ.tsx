@@ -14,6 +14,10 @@ const FAQ = () => {
               emoji={item.emoji}
               question={item.question}
               answer={item.answer}
+              images={item.images}
+              qrCode={item.qrCode}
+              qrCodeLabel={item.qrCodeLabel}
+              button={item.button} // Ajout ici pour transmettre le bouton
             />
           ))}
         </div>
