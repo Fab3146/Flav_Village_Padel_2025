@@ -2,29 +2,59 @@ import React, { useEffect, useState } from 'react';
 import { Cloud, Sun, Wind, Droplets } from 'lucide-react';
 
 const WeatherWidget = () => {
-  const [weatherData, setWeatherData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const apiKey = 'f439e60cb76ed983634ad07546c45238'; // Remplacez par votre clé API OpenWeatherMap
+  const [weatherData, setWeatherData] = useState<any>(null);  // Déclaration plus générique
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);  // Gérer les erreurs d'appel API
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?q=Grisolles,France&appid=${apiKey}&units=metric`
-        );
+        const response = await fetch('http://localhost:3000/weather');  // URL du serveur local
+
+        if (!response.ok) {
+          throw new Error('Erreur lors de la récupération des données météo');
+        }
+
         const data = await response.json();
-        setWeatherData(data.list);
+
+        if (data.success) {
+          setWeatherData(data.data.current);  // Nous avons accès aux données actuelles ici
+          setLoading(false);
+        } else {
+          setError('Données météo non disponibles');
+          setLoading(false);
+        }
+      } catch (error: any) {
+        setError(error.message);  // Afficher l'erreur si l'appel échoue
         setLoading(false);
-      } catch (error) {
-        console.error('Error fetching weather data:', error);
       }
     };
 
     fetchWeather();
-  }, [apiKey]);
+  }, []);
 
   if (loading) {
-    // ... votre composant de chargement (similaire à votre code actuel)
+    return (
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Sun className="text-brand-orange" />
+          Météo à Grisolles
+        </h2>
+        <p>Chargement...</p>  {/* Afficher un message de chargement */}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Sun className="text-brand-orange" />
+          Météo à Grisolles
+        </h2>
+        <p className="text-red-500">{error}</p>  {/* Afficher un message d'erreur */}
+      </div>
+    );
   }
 
   return (
@@ -36,14 +66,16 @@ const WeatherWidget = () => {
 
       {weatherData && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {weatherData.map((day, index) => (
-            <div key={index} className="bg-gray-100 rounded-lg p-4">
-              <p><strong>{new Date(day.dt * 1000).toLocaleDateString()}</strong></p>
-              <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
-              <p>Température : {day.main.temp}°C</p>
-              <p>Vent : {day.wind.speed} m/s</p>
-            </div>
-          ))}
+          <div className="bg-gray-100 rounded-lg p-4">
+            <p><strong>Conditions actuelles</strong></p>
+            <img src={weatherData.weather_icons[0]} alt={weatherData.weather_descriptions[0]} />
+            <p>Température : {weatherData.temperature}°C</p>
+            <p>Ressentie : {weatherData.feelslike}°C</p>
+            <p>Vent : {weatherData.wind_speed} m/s</p>
+            <p>Humidité : {weatherData.humidity}%</p>
+            <p>Pression : {weatherData.pressure} hPa</p>
+            <p>Description : {weatherData.weather_descriptions[0]}</p>
+          </div>
         </div>
       )}
     </div>
