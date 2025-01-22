@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { Cloud, Sun, Wind, Droplets } from 'lucide-react';
+import { Sun } from 'lucide-react';
 
 const WeatherWidget = () => {
-  const [weatherData, setWeatherData] = useState<any>(null);  // Déclaration plus générique
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);  // Gérer les erreurs d'appel API
+  const [weatherData, setWeatherData] = useState(null); // Stocke les données météo
+  const [loading, setLoading] = useState(true); // Indique si les données sont en cours de chargement
+  const [error, setError] = useState(null); // Stocke les erreurs éventuelles
 
   useEffect(() => {
-    const fetchWeather = async () => {
+    // Fonction pour récupérer les données météo depuis l'API Render
+    const fetchWeatherFromCache = async () => {
       try {
-        const response = await fetch('http://localhost:3000/weather');  // URL du serveur local
+        const response = await fetch('https://api-weather-xp2w.onrender.com/weather'); // Appelle l'API Render
 
         if (!response.ok) {
-          throw new Error('Erreur lors de la récupération des données météo');
+          throw new Error('Impossible de récupérer les données météo depuis l\'API.');
         }
 
         const data = await response.json();
 
-        if (data.success) {
-          setWeatherData(data.data.current);  // Nous avons accès aux données actuelles ici
-          setLoading(false);
+        if (data.weather) {
+          setWeatherData(data.weather); // Stocke les données récupérées
+          setLoading(false); // Arrête le chargement
         } else {
-          setError('Données météo non disponibles');
-          setLoading(false);
+          throw new Error('Données météo non disponibles.');
         }
-      } catch (error: any) {
-        setError(error.message);  // Afficher l'erreur si l'appel échoue
+      } catch (err) {
+        setError(err.message); // Enregistre l'erreur
         setLoading(false);
       }
     };
 
-    fetchWeather();
-  }, []);
+    fetchWeatherFromCache(); // Appeler la fonction au chargement du composant
+  }, []); // Le tableau vide signifie que cette fonction s'exécute une seule fois, au chargement
 
   if (loading) {
     return (
@@ -40,7 +40,7 @@ const WeatherWidget = () => {
           <Sun className="text-brand-orange" />
           Météo à Grisolles
         </h2>
-        <p>Chargement...</p>  {/* Afficher un message de chargement */}
+        <p>Chargement des données météo...</p>
       </div>
     );
   }
@@ -52,7 +52,7 @@ const WeatherWidget = () => {
           <Sun className="text-brand-orange" />
           Météo à Grisolles
         </h2>
-        <p className="text-red-500">{error}</p>  {/* Afficher un message d'erreur */}
+        <p className="text-red-500">Erreur : {error}</p>
       </div>
     );
   }
@@ -65,16 +65,14 @@ const WeatherWidget = () => {
       </h2>
 
       {weatherData && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-gray-100 rounded-lg p-4">
             <p><strong>Conditions actuelles</strong></p>
-            <img src={weatherData.weather_icons[0]} alt={weatherData.weather_descriptions[0]} />
-            <p>Température : {weatherData.temperature}°C</p>
-            <p>Ressentie : {weatherData.feelslike}°C</p>
-            <p>Vent : {weatherData.wind_speed} m/s</p>
-            <p>Humidité : {weatherData.humidity}%</p>
-            <p>Pression : {weatherData.pressure} hPa</p>
-            <p>Description : {weatherData.weather_descriptions[0]}</p>
+            <p>Température : {weatherData.main.temp}°C</p>
+            <p>Ressentie : {weatherData.main.feels_like}°C</p>
+            <p>Humidité : {weatherData.main.humidity}%</p>
+            <p>Vent : {weatherData.wind.speed} m/s</p>
+            <p>Description : {weatherData.weather[0].description}</p>
           </div>
         </div>
       )}
@@ -83,3 +81,4 @@ const WeatherWidget = () => {
 };
 
 export default WeatherWidget;
+
