@@ -19,7 +19,10 @@ const WeatherWidget = () => {
         const data = await response.json();
 
         if (data.weather) {
-          setWeatherData(data.weather); // Stocke les données récupérées
+          setWeatherData({
+            ...data.weather,
+            lastUpdated: data.lastUpdated,
+          }); // Stocke les données récupérées
           setLoading(false); // Arrête le chargement
         } else {
           throw new Error('Données météo non disponibles.');
@@ -40,6 +43,9 @@ const WeatherWidget = () => {
           <Sun className="text-brand-orange" />
           Météo à Grisolles
         </h2>
+        <div className="flex items-center justify-center h-24">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-brand-orange"></div>
+        </div>
         <p>Chargement des données météo...</p>
       </div>
     );
@@ -53,6 +59,12 @@ const WeatherWidget = () => {
           Météo à Grisolles
         </h2>
         <p className="text-red-500">Erreur : {error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="bg-brand-orange text-white px-4 py-2 rounded-lg mt-4"
+        >
+          Réessayer
+        </button>
       </div>
     );
   }
@@ -72,7 +84,15 @@ const WeatherWidget = () => {
             <p>Ressentie : {weatherData.main.feels_like}°C</p>
             <p>Humidité : {weatherData.main.humidity}%</p>
             <p>Vent : {weatherData.wind.speed} m/s</p>
-            <p>Description : {weatherData.weather[0].description}</p>
+            <p>
+              Description :{' '}
+              {weatherData.weather[0].description.charAt(0).toUpperCase() +
+                weatherData.weather[0].description.slice(1)}
+            </p>
+          </div>
+          <div className="bg-gray-100 rounded-lg p-4">
+            <p><strong>Dernière mise à jour</strong></p>
+            <p>{new Date(weatherData.lastUpdated).toLocaleString('fr-FR')}</p>
           </div>
         </div>
       )}
@@ -81,4 +101,5 @@ const WeatherWidget = () => {
 };
 
 export default WeatherWidget;
+
 
