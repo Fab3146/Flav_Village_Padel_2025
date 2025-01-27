@@ -131,5 +131,3 @@ const WeatherWidget = () => {
 export default WeatherWidget;
 
 
-export default WeatherWidget;
-
