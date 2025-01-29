@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white flex flex-col">
         <PromoBar />
         <Navbar 
           isMenuOpen={isMenuOpen} 
@@ -24,7 +24,7 @@ const App: React.FC = () => {
           setShowQR={setShowQR}
         />
         
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/padel-info" element={<PadelInfo />} />
