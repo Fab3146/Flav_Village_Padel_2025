@@ -74,13 +74,13 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-extrabold mb-4">Informations légales</h3>
             <div className="space-y-2">
            <a 
-                href="/cgu" 
+                href="/cgu.html" 
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGU
               </a>
               <a 
-                href="/cgv" 
+                href="/cgv.html" 
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGV
