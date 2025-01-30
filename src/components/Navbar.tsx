@@ -41,8 +41,6 @@ const navItems = [
   { label: 'Tout sur le Padel', to: '/padel-info' },
   { label: 'Padel de Grisolles', to: '/grisolles' },
   { label: 'Contact', to: '/#contact', onClick: handleContactClick },
-  { label: 'CGU', to: 'https://fab3146.github.io/Flav_Village_Padel_2025/cgu.html', external: true },
-  { label: 'CGV', to: 'https://fab3146.github.io/Flav_Village_Padel_2025/cgv.html', external: true },
 ];
 
   return (
@@ -109,29 +107,6 @@ const navItems = [
           </div>
         </div>
       )}
-
-      {navItems.map((item) =>
-  item.external ? (
-    <a
-      key={item.label}
-      href={item.to}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-700 hover:text-brand-orange transition font-bold"
-    >
-      {item.label}
-    </a>
-  ) : (
-    <Link
-      key={item.label}
-      to={item.to}
-      onClick={item.onClick}
-      className="text-gray-700 hover:text-brand-orange transition font-bold"
-    >
-      {item.label}
-    </Link>
-  )
-)}
 
       {showQR && (
         <div className="absolute right-4 top-20 bg-white p-4 rounded-lg shadow-lg">
