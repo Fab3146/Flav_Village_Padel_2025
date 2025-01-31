@@ -74,13 +74,17 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-extrabold mb-4">Informations légales</h3>
             <div className="space-y-2">
            <a 
-                href="/cgu.html" 
+                href="https://fab3146.github.io/Flav_Village_Padel_2025/cgu.html" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGU
               </a>
-              <a 
-                href="/cgv.html" 
+            <a 
+                href="https://fab3146.github.io/Flav_Village_Padel_2025/cgv.html" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGV
