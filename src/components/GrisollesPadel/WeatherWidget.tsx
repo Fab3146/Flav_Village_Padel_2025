@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Sun, Cloud, CloudRain, Zap, Snow, RefreshCw } from 'lucide-react';
+import { Sun, Cloud, CloudRain, Zap, CloudSnow, RefreshCw } from 'lucide-react';
 
 const weatherBackgrounds = {
   "clear": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/ciel_bleu_nlicx0.webp",
@@ -17,7 +17,7 @@ const weatherIcons = {
   "cloudy": <Cloud className="text-gray-500 w-10 h-10" aria-label="Nuageux" />,
   "rainy": <CloudRain className="text-blue-400 w-10 h-10" aria-label="Pluie" />,
   "stormy": <Zap className="text-purple-500 w-10 h-10" aria-label="Orage" />,
-  "snowy": <Snow className="text-blue-200 w-10 h-10" aria-label="Neige" />
+  "snowy": <CloudSnow className="text-blue-200 w-10 h-10" aria-label="Neige" />
 };
 
 // Fonction pour déterminer la condition météo
