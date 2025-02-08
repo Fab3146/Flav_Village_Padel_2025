@@ -74,7 +74,7 @@ const WeatherWidget = () => {
     <div className="bg-gradient-to-br from-white to-gray-100 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
       <h2 className="text-3xl font-bold text-orange-500 flex items-center gap-2 mb-6">
         <Sun className="text-orange-500" />
-        Météo à Grisolles
+        Météo à {current.name}
       </h2>
 
       {/* Conditions actuelles */}
@@ -82,16 +82,14 @@ const WeatherWidget = () => {
         <h3 className="text-xl font-semibold mb-2">Conditions actuelles</h3>
         <div className="flex items-center gap-4">
           <img
-            src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${current.icon}@2x.png`}
             alt="Icône météo"
             className="w-16 h-16"
           />
           <div>
-            <p className="text-lg font-semibold">{current.weather[0].description}</p>
-            <p>Température : <span className="font-bold">{current.main.temp}°C</span></p>
-            <p>Ressenti : {current.main.feels_like}°C</p>
-            <p>Humidité : {current.main.humidity}%</p>
-            <p>Vent : {current.wind.speed} m/s</p>
+            <p className="text-lg font-semibold">{current.description}</p>
+            <p>Température : <span className="font-bold">{current.temp}°C</span></p>
+            <p>Humidité : {current.humidity}%</p>
           </div>
         </div>
       </div>
@@ -106,12 +104,14 @@ const WeatherWidget = () => {
               className="flex justify-between items-center bg-white rounded-lg shadow p-4"
             >
               <div>
-                <p className="text-lg font-bold">{new Date(day.dt_txt).toLocaleDateString()}</p>
-                <p className="text-gray-700">{day.weather[0].description}</p>
-                <p>Température : {day.main.temp}°C</p>
+                <p className="text-lg font-bold">
+                  {new Date(day.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}
+                </p>
+                <p className="text-gray-700">{day.description}</p>
+                <p>Température : {day.temp}°C</p>
               </div>
               <img
-                src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
                 alt="Icône météo"
                 className="w-12 h-12"
               />
