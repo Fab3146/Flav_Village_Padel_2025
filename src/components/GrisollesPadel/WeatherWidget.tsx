@@ -1,5 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Sun, RefreshCw } from 'lucide-react';
+import { Sun, Cloud, CloudRain, Zap, Snow, RefreshCw } from 'lucide-react';
+
+const weatherBackgrounds = {
+  "clear": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/ciel_bleu_nlicx0.webp",
+  "partly-cloudy": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/eclairicie_ebcmqy.jpg",
+  "cloudy": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014455/nuageux_qtiquu.jpg",
+  "rainy": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/pluie_ntsg1s.jpg",
+  "stormy": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/orage_qtxhlc.jpg",
+  "snowy": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/pluie_ntsg1s.jpg", // Placeholder pour la neige
+  "night": "https://res.cloudinary.com/damfvriyn/image/upload/v1739014272/Nuit_yoegdh.jpg"
+};
+
+const weatherIcons = {
+  "clear": <Sun className="text-yellow-400 w-10 h-10" aria-label="Soleil" />,
+  "partly-cloudy": <Cloud className="text-gray-400 w-10 h-10" aria-label="Éclaircie" />,
+  "cloudy": <Cloud className="text-gray-500 w-10 h-10" aria-label="Nuageux" />,
+  "rainy": <CloudRain className="text-blue-400 w-10 h-10" aria-label="Pluie" />,
+  "stormy": <Zap className="text-purple-500 w-10 h-10" aria-label="Orage" />,
+  "snowy": <Snow className="text-blue-200 w-10 h-10" aria-label="Neige" />
+};
+
+// Fonction pour déterminer la condition météo
+const getWeatherCondition = (description) => {
+  const lowerDesc = description.toLowerCase();
+  if (lowerDesc.includes("orage")) return "stormy";
+  if (lowerDesc.includes("pluie")) return "rainy";
+  if (lowerDesc.includes("neige")) return "snowy";
+  if (lowerDesc.includes("nuageux")) return "cloudy";
+  if (lowerDesc.includes("éclaircie")) return "partly-cloudy";
+  return "clear"; // Par défaut
+};
 
 const WeatherWidget = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -10,13 +40,10 @@ const WeatherWidget = () => {
     const fetchWeatherFromCache = async () => {
       try {
         const response = await fetch('https://api-weather-xp2w.onrender.com/weather');
-
         if (!response.ok) {
           throw new Error("Impossible de récupérer les données météo depuis l'API.");
         }
-
         const data = await response.json();
-
         if (data.weather) {
           setWeatherData({
             ...data.weather,
@@ -28,106 +55,46 @@ const WeatherWidget = () => {
         }
       } catch (err) {
         setError(err.message);
-        setLoading(false);
       }
     };
-
     fetchWeatherFromCache();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg shadow-lg p-6 animate-pulse">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Sun className="text-white" />
-          Météo à Grisolles
-        </h2>
-        <div className="flex items-center justify-center h-24">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-white"></div>
-        </div>
-        <p className="text-center mt-4">Chargement des données météo...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-red-500">
-          <Sun className="text-red-500" />
-          Météo à Grisolles
-        </h2>
-        <p className="text-gray-700">Erreur : {error}</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg mt-4 transition-all"
-        >
-          Réessayer
-        </button>
-      </div>
-    );
-  }
+  if (loading) return <div className="w-80 h-80 bg-gray-200 animate-pulse rounded-xl"></div>;
+  if (error) return <div className="w-80 h-80 bg-red-200 rounded-xl p-4">Erreur : {error}</div>;
 
   const { current, forecast } = weatherData;
+  const condition = getWeatherCondition(current.description);
+  const backgroundImage = weatherBackgrounds[condition];
+  const weatherIcon = weatherIcons[condition] || <Cloud className="text-gray-400 w-10 h-10" aria-label="Météo inconnue" />;
 
   return (
-    <div className="bg-gradient-to-br from-white to-gray-100 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
-      <h2 className="text-3xl font-bold text-orange-500 flex items-center gap-2 mb-6">
-        <Sun className="text-orange-500" />
-        Météo à {current.name}
-      </h2>
-
-      {/* Conditions actuelles */}
-      <div className="bg-white rounded-lg shadow p-4 mb-6">
-        <h3 className="text-xl font-semibold mb-2">Conditions actuelles</h3>
-        <div className="flex items-center gap-4">
-          <img
-            src={`https://openweathermap.org/img/wn/${current.icon}@2x.png`}
-            alt="Icône météo"
-            className="w-16 h-16"
-          />
-          <div>
-            <p className="text-lg font-semibold">{current.description}</p>
-            <p>Température : <span className="font-bold">{current.temp}°C</span></p>
-            <p>Humidité : {current.humidity}%</p>
+    <div className="w-80 h-80 rounded-xl shadow-lg relative overflow-hidden text-white">
+      <img src={backgroundImage} alt="Weather Background" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <div className="absolute inset-0 bg-black bg-opacity-30 p-4 flex flex-col justify-between">
+        {/* Température actuelle */}
+        <div className="text-center">
+          <h2 className="text-xl font-semibold">Météo à {current.name}</h2>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            {weatherIcon}
+            <span className="text-4xl font-bold">{current.temp}°C</span>
           </div>
+          <p className="text-sm mt-1">{current.description}</p>
         </div>
-      </div>
 
-      {/* Prévisions pour les 3 prochains jours */}
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Prévisions à 3 jours</h3>
-        <div className="grid grid-cols-1 gap-4">
-          {forecast.map((day, index) => (
-            <div
-              key={index}
-              className="flex justify-between items-center bg-white rounded-lg shadow p-4"
-            >
-              <div>
-                <p className="text-lg font-bold">
-                  {new Date(day.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}
-                </p>
-                <p className="text-gray-700">{day.description}</p>
-                <p>Température : {day.temp}°C</p>
-              </div>
-              <img
-                src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                alt="Icône météo"
-                className="w-12 h-12"
-              />
+        {/* Prévisions */}
+        <div className="grid grid-cols-3 gap-2 text-center text-xs">
+          {forecast.map((day) => (
+            <div key={day.date} className="bg-white bg-opacity-20 p-2 rounded-md">
+              <p className="font-semibold">{new Date(day.date).toLocaleDateString('fr-FR', { weekday: 'short' })}</p>
+              <p>{day.temp}°C</p>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Dernière mise à jour */}
-      <div className="mt-6 text-center text-gray-500 text-sm">
-        Dernière mise à jour : {new Date(weatherData.lastUpdated).toLocaleString('fr-FR')}
       </div>
     </div>
   );
 };
 
 export default WeatherWidget;
-
 
