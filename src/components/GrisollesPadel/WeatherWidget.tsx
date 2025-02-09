@@ -27,6 +27,7 @@ const getWeatherCondition = (description: string) => {
   if (lowerDesc.includes("pluie")) return "rainy";
   if (lowerDesc.includes("neige")) return "snowy";
   if (lowerDesc.includes("nuageux")) return "cloudy";
+  if (lowerDesc.includes("couvert")) return "cloudy";
   if (lowerDesc.includes("éclaircie")) return "partly-cloudy";
   return "clear"; // Par défaut
 };
