@@ -63,11 +63,11 @@ const Solutions = () => {
                 <span>Accès aux raquettes et balles via une boîte sécurisée</span>
               </li>
             </ul>
-            <Link
-              to="/#contact"
+            <Link 
+              to="/demande-devis"
               className="mt-8 inline-block bg-brand-orange text-white px-6 py-3 rounded-lg hover:bg-brand-orange-dark transition"
             >
-              En savoir plus sur l'automatisation
+              Demander un devis
             </Link>
           </div>
 
