@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import PadelInfo from './pages/PadelInfo';
@@ -9,7 +9,7 @@ import PromoBar from './components/PromoBar';
 import CGU from './pages/HomePage/CGU';
 import CGV from './pages/HomePage/CGV';
 
-// Composant pour gérer le scroll
+// Composant ScrollToTop
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -26,6 +26,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <ScrollToTop /> {/* Ajout ici pour fonctionner avec le Router */}
       <div className="min-h-screen bg-white flex flex-col">
         <PromoBar />
         <Navbar 
@@ -52,3 +53,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
