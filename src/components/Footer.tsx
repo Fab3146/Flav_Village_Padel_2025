@@ -70,13 +70,11 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div>
+         <div>
             <h3 className="text-xl font-extrabold mb-4">Informations légales</h3>
             <div className="space-y-2">
-           <a 
-                href="https://fab3146.github.io/Flav_Village_Padel_2025/cgu.html" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <a 
+                href="/cgu" 
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGU
