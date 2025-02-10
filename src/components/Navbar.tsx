@@ -17,6 +17,12 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const location = useLocation();
 
+  // 🔹 Ferme le menu mobile après un clic sur un lien
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  // 🔹 Scroll fluide pour les liens d'ancre
   const handleSolutionClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if (location.pathname !== '/') {
@@ -24,6 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({
     } else {
       document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
     }
+    handleLinkClick(); // Ferme le menu après clic
   };
 
   const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -33,22 +40,24 @@ const Navbar: React.FC<NavbarProps> = ({
     } else {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }
+    handleLinkClick(); // Ferme le menu après clic
   };
 
-const navItems = [
-  { label: 'Accueil', to: '/' },
-  { label: 'Notre Solution', to: '/#solutions', onClick: handleSolutionClick },
-  { label: 'Tout sur le Padel', to: '/padel-info' },
-  { label: 'Padel de Grisolles', to: '/grisolles' },
-  { label: 'Contact', to: '/#contact', onClick: handleContactClick },
-];
+  const navItems = [
+    { label: 'Accueil', to: '/', onClick: handleLinkClick },
+    { label: 'Notre Solution', to: '/#solutions', onClick: handleSolutionClick },
+    { label: 'Tout sur le Padel', to: '/padel-info', onClick: handleLinkClick },
+    { label: 'Padel de Grisolles', to: '/grisolles', onClick: handleLinkClick },
+    { label: 'Contact', to: '/#contact', onClick: handleContactClick },
+  ];
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+          {/* 🔹 Logo */}
           <div className="flex items-center space-x-2">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" onClick={handleLinkClick}>
               <img 
                 src="https://raw.githubusercontent.com/Fab3146/Village-Padel-Flavien/ba35cf00af8d0e1b03a91f11e3978f56aa7e02a0/-Village_Padel_LOGO_LOLA_Bon__1_sansfond.qpng.png"
                 alt="Village Padel Logo"
@@ -60,6 +69,7 @@ const navItems = [
             </Link>
           </div>
 
+          {/* 🔹 Menu Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
@@ -80,6 +90,7 @@ const navItems = [
             </button>
           </div>
 
+          {/* 🔹 Bouton Hamburger (Mobile) */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -91,6 +102,7 @@ const navItems = [
         </div>
       </div>
 
+      {/* 🔹 Menu Mobile */}
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -98,7 +110,7 @@ const navItems = [
               <Link
                 key={item.label}
                 to={item.to}
-                onClick={item.onClick}
+                onClick={item.onClick} // 🔹 Ferme le menu après un clic
                 className="block px-3 py-2 text-gray-700 hover:text-brand-orange transition font-bold"
               >
                 {item.label}
@@ -108,6 +120,7 @@ const navItems = [
         </div>
       )}
 
+      {/* 🔹 QR Code Popup */}
       {showQR && (
         <div className="absolute right-4 top-20 bg-white p-4 rounded-lg shadow-lg">
           <img
@@ -122,3 +135,4 @@ const navItems = [
 }
 
 export default Navbar;
+
