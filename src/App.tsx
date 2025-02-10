@@ -4,10 +4,12 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import PadelInfo from './pages/PadelInfo';
 import GrisollesPadel from './pages/GrisollesPadel';
+import QuoteRequest from './pages/QuoteRequest';
+import AppFeatures from './pages/AppFeatures';
+import CGU from './pages/CGU';
+import CGV from './pages/CGV';
 import Footer from './components/Footer';
 import PromoBar from './components/PromoBar';
-import CGU from './pages/HomePage/CGU';
-import CGV from './pages/HomePage/CGV';
 
 // Composant ScrollToTop
 const ScrollToTop = () => {
@@ -37,8 +39,8 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <ScrollToTop /> {/* Ajout ici pour fonctionner avec le Router */}
-      <div className="min-h-screen bg-white flex flex-col">
+      <ScrollToTop />
+      <div className="min-h-screen bg-white">
         <PromoBar />
         <Navbar 
           isMenuOpen={isMenuOpen} 
@@ -47,11 +49,13 @@ const App: React.FC = () => {
           setShowQR={setShowQR}
         />
         
-        <main className="flex-grow">
+        <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/padel-info" element={<PadelInfo />} />
             <Route path="/grisolles" element={<GrisollesPadel />} />
+            <Route path="/demande-devis" element={<QuoteRequest />} />
+            <Route path="/application" element={<AppFeatures />} />
             <Route path="/cgu" element={<CGU />} />
             <Route path="/cgv" element={<CGV />} />
           </Routes>
@@ -64,4 +68,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
