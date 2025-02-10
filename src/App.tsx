@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import PadelInfo from './pages/PadelInfo';
 import GrisollesPadel from './pages/GrisollesPadel';
 import QuoteRequest from './pages/QuoteRequest';
-import AppFeatures from './pages/AppFeatures';
+import AppFeatures from "./pages/HomePage/AppFeatures";
 import CGU from './pages/CGU';
 import CGV from './pages/CGV';
 import Footer from './components/Footer';
