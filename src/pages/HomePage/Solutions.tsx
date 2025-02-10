@@ -61,7 +61,7 @@ const Solutions = () => {
               <li className="flex items-center">
                 <Wrench className="text-brand-orange mr-2" />
                 <span>Accès aux raquettes et balles via une boîte sécurisée</span>
-              </li>
+                </li>
             </ul>
             <Link 
               to="/demande-devis"
@@ -70,10 +70,10 @@ const Solutions = () => {
               Demander un devis
             </Link>
           </div>
-
+          
           {/* Solution 2 */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold mb-4">Construction et exploitation de pistes de padel</h3>
+            <h3 className="text-2xl font-bold mb-4">Financement et exploitation de pistes de padel</h3>
             <div className="mb-6">
               <ImageCarousel images={constructionImages} />
             </div>
@@ -108,4 +108,3 @@ const Solutions = () => {
 };
 
 export default Solutions;
-
