@@ -11,11 +11,22 @@ import CGV from './pages/HomePage/CGV';
 
 // Composant ScrollToTop
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Attendre que la page charge avant de scroller vers l'ancre
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Petit délai pour garantir que l'élément est bien là
+    } else {
+      // Si pas d'ancre, remonter en haut de la page
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };
