@@ -81,10 +81,8 @@ const Footer: React.FC = () => {
               >
                 CGU
               </a>
-            <a 
-                href="https://fab3146.github.io/Flav_Village_Padel_2025/cgv.html" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <a 
+                href="/cgv" 
                 className="text-gray-300 hover:text-white transition block font-medium"
               >
                 CGV
