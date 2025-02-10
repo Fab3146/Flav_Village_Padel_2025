@@ -9,6 +9,17 @@ import PromoBar from './components/PromoBar';
 import CGU from './pages/HomePage/CGU';
 import CGV from './pages/HomePage/CGV';
 
+// Composant pour gérer le scroll
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showQR, setShowQR] = useState(false);
