@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
                 <span className="block text-brand-orange">avec Village Padel</span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Village Padel démocratise le padel en zone rurale avec deux solutions clés : l’automatisation gratuite des pistes existantes et l’installation de nouvelles infrastructures, intégrées aux complexes sportifs comme les clubs de tennis. Grâce à notre application intuitive, réserver et jouer au padel devient simple et accessible !              </p>
+                Village Padel démocratise le padel avec deux solutions clés : l’automatisation des pistes existantes et le fiancement de nouvelles infrastructures. Grâce à notre application intuitive, réserver et jouer au padel devient simple et accessible !              </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
