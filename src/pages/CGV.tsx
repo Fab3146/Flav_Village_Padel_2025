@@ -14,7 +14,7 @@ const CGV: React.FC = () => {
         </div>
       </header>
 
-      <main className="p-6 mt-20 max-w-3xl mx-auto bg-white text-black rounded-lg shadow-lg">
+      <main className="p-6 pt-24 max-w-3xl mx-auto bg-white text-black rounded-lg shadow-lg">
         <h2 className="text-blue-900 text-2xl font-bold mb-4">
           Conditions Générales de Vente (CGV)
         </h2>
